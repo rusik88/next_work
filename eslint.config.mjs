@@ -12,20 +12,13 @@ export default defineConfig([
     files: ["**/*.{js,ts,jsx,tsx}"],
 
     rules: {
-      // 🔹 База
       "no-console": ["warn", { allow: ["warn", "error"] }],
       "no-debugger": "warn",
 
-      // 🔹 Стиль
       "semi": ["error", "always"],
       "quotes": ["error", "double"],
       "no-unexpected-multiline": "error",
 
-      // 🔹 React / Next
-      "react/react-in-jsx-scope": "off",
-      "@next/next/no-img-element": "warn",
-
-      // 🔹 Імпорти
       "import/order": [
         "warn",
         {
@@ -34,13 +27,12 @@ export default defineConfig([
         },
       ],
 
-      // 🔹 TypeScript
       "@typescript-eslint/no-unused-vars": [
         "warn",
         { argsIgnorePattern: "^_" },
       ],
 
-      "@typescript-eslint/consistent-type-imports": "warn",
+      //"@typescript-eslint/consistent-type-imports": "warn", //Check on type import
     },
 
     ignores: [
