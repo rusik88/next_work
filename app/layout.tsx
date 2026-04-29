@@ -1,15 +1,12 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import type { Metadata } from "next";import {Poppins} from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+import Header from "@/app/components/Header";
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+import {NextFont} from "next/dist/compiled/@next/font";
+
+const poppins: NextFont = Poppins({
+  weight: ["100", "400", "500", "700"]
 });
 
 export const metadata: Metadata = {
@@ -23,8 +20,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
-      <body>{children}</body>
+    <html lang="en" className={poppins.className}>
+      <body>
+        <Header />
+        <div className="container">
+          {children}
+        </div>
+      </body>
     </html>
   );
 }
