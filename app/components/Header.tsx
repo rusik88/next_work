@@ -7,7 +7,7 @@ const Header = () => {
             <span>ItNextJS</span>
             <nav>
                 <Link href="/">Home</Link>
-                <Link href="/users">About</Link>
+                <Link href="/users">Users</Link>
             </nav>
         </header>
     );

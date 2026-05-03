@@ -1,6 +1,7 @@
 import {notFound} from "next/navigation";
 
 import Button from "@/app/components/Button";
+import Counter from "@/app/components/Counter";
 
 export const dynamic = "force-dynamic";
 
@@ -19,8 +20,6 @@ async function getUsers() {
         notFound();
         //return [];
     }
-
-
 }
 
 async function UsersPage() {
@@ -32,6 +31,9 @@ async function UsersPage() {
                 return (<h2 key={user.id}>{user.name}</h2>);
             })}
             <Button text={"Click Me Button 111"} url={process.env.NEXT_URL} />
+            <hr /><br /><hr /><br /><hr />
+            <Counter />
+
         </div>
     );
 }

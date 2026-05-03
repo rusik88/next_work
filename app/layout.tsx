@@ -1,9 +1,9 @@
 import type { Metadata } from "next";import {Poppins} from "next/font/google";
 import "./globals.css";
+import {NextFont} from "next/dist/compiled/@next/font";
 
 import Header from "@/app/components/Header";
-
-import {NextFont} from "next/dist/compiled/@next/font";
+import ReduxProvider from "./components/StoreProvider";
 
 const poppins: NextFont = Poppins({
   weight: ["100", "400", "500", "700"]
@@ -20,13 +20,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={poppins.className}>
-      <body>
-        <Header />
-        <div className="container">
-          {children}
-        </div>
-      </body>
-    </html>
+    <ReduxProvider>
+      <html lang="en" className={poppins.className}>
+        <body>
+          <Header />
+          <div className="container">
+            {children}
+          </div>
+        </body>
+      </html>
+    </ReduxProvider>
   );
 }
